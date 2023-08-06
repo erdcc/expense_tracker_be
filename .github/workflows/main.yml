@@ -13,14 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          submodules: 'recursive'
-        env:
           NODE_VERSION: 18
 
       - name: Install dependencies
         run: npm install
 
       - name: Deploy to Server
-        run: ssh -v root@173.82.58.139 'cd /home/toolgeny/public_html/expense_tracker_be && git pull origin main && npm install && pm2 restart index'
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOYMENT_SSH_PRIVATE_KEY }}
+        run: 
+          git pull origin main
+          npm install
+          pm2 restart index
+        
