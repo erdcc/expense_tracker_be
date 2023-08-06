@@ -17,7 +17,7 @@ jobs:
         run: npm install
 
       - name: Deploy to Server
-        run: 
+        run: |
           git pull origin main
           npm install
           pm2 restart index
