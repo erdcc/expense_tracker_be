@@ -7,13 +7,11 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          NODE_VERSION: 18
 
       - name: Install dependencies
         run: npm install
