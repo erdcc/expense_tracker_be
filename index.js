@@ -29,5 +29,5 @@ server.use(catchAllErrorHandler);
 const PORT = process.env.PORT || 5000;
 
 server.listen(PORT, '127.0.0.1', () => {
-  console.log(`Port: ${PORT} üzerinden istekler dinleniyor...`);
+  console.log(`Listening Port: ${PORT}...`);
 });
