@@ -1,0 +1,27 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Deploy to Server
+        run: ssh root@173.82.58.139 'cd /home/toolgeny/public_html/expense_tracker_be-master && git pull origin main && npm install && pm2 restart express'
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOYMENT_SSH_PRIVATE_KEY }}
