@@ -3,8 +3,8 @@ module.exports = {
     client: "pg",
     connection: {
       database: "expense_tracker",
-      user: "admin",
-      password: "admin",
+      user: "admin_bey",
+      password: "sunucugeny55",
     },
     migrations: {
       directory: "./data/migrations",

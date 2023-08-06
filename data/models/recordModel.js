@@ -8,7 +8,7 @@ module.exports = {
   remove,
 };
 
-async function find() {
+async function find(user_id) {
   return db("record as r")
     .join("category as c", "r.category_id", "c.id")
     .select(
@@ -21,7 +21,8 @@ async function find() {
       "c.id as categoryId",
       "c.type as type",
       "c.color as color"
-    );
+    )
+    .where({"r.user_id": user_id});
 }
 
 async function findById(id) {
@@ -33,6 +34,7 @@ async function findById(id) {
       "r.amount",
       "r.created_at as createdAt",
       "r.updated_at as updatedAt",
+      "r.user_id as user_id",
       "c.name as categoryName",
       "c.id as categoryId",
       "c.type as type",

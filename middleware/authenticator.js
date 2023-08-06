@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
 
   if (token) {
     jwt.verify(token, secret, (error, decodedToken) => {
-      if (error) next([401, "Invalid token"]);
+      if (error) next([401, "Invalid token(JWT)"]);
       else {
         req.decodedToken = decodedToken;
         req.token = token;
