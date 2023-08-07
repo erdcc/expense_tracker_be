@@ -1,6 +1,6 @@
 ## API URL
 
-[https://expensetracker-be.herokuapp.com](https://expensetracker-be.herokuapp.com)
+[https://tracker.toolgen.dev/](https://tracker.toolgen.dev/)
 
 ## Documentation
 
@@ -8,20 +8,7 @@
 
 ## Tech Stack
 
-React
-TypeScript
-Redux
-Ant Design
+- Express.Js
 
-## Topics
 
-- API Introduction
-- Application Setup
-- Folder Structure
-- Type Definitions
-- Redux Setup
-- Signup Page
-- Login Page
-- Expense Tracking Page
-- Category Management Page
-- Deploying the application
+
